@@ -3,6 +3,7 @@
   margin: 0;
   box-sizing: border-box;
   color: inherit;
+  outline: none;
 }
 
 @font-face {
@@ -84,11 +85,9 @@ p {
 
 .middle {
   background: white;
-}
-
-.right-content {
-  margin-left: 50px;
-  width: 800px;
+  display: flex;
+  align-items: flex-end;
+  gap: 75px;
 }
 
 .text {
@@ -100,16 +99,80 @@ p {
   font-weight: 500;
 }
 
-a:link {
-  color: rgb(1, 78, 1);
-  text-decoration: none;
-}
-
 .caption a:link {
   color: inherit;
   text-decoration: underline;
 }
 
+a:link,
+a:visited {
+  color: rgb(4, 92, 4);
+  text-decoration: none;
+}
+
 [type="submit"] {
   margin-bottom: 30px;
+}
+
+.form-box {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-item {
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  letter-spacing: 0.1rem;
+  color: rgb(53, 52, 52);
+  position: relative;
+}
+
+label {
+  display: block;
+}
+
+.middle input {
+  width: 100%;
+  height: 2rem;
+  border-radius: 5px;
+  border: 0.05rem solid #e5e7eb;
+  /* appearance: none; */
+  padding: 0 5px;
+  color: black;
+  font-weight: 700;
+}
+
+.middle input:focus {
+  border-color: rgb(93, 93, 255);
+}
+
+input:invalid {
+  border-color: red;
+}
+
+input:invalid + .invalid::after {
+  position: relative;
+  color: rgb(250, 83, 83);
+  text-transform: none;
+  font-weight: bold;
+  letter-spacing: normal;
+  font-size: 0.6rem;
+  position: absolute;
+}
+
+input[type="email"]:invalid + .invalid::after {
+  content: "* Invalid email";
+}
+
+input[type="password"]:invalid {
+}
+
+input[type="password"]#password:invalid + .invalid::after {
+  content: "* Passwords do not match";
+}
+
+input[type="tel"]:invalid + .invalid::after {
+  content: "* A valid phone number is required";
 }
