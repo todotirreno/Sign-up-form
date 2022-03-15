@@ -1,5 +1,5 @@
 # Sign-up-form
-CSS practice project from The Odin Project
+HTML/CSS sign-up form.
 
 ![image](https://user-images.githubusercontent.com/16512686/158465464-08db07f3-df6d-4c49-a2cd-6cd48271cdb3.png)
 
